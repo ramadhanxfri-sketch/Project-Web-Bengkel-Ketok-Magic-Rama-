@@ -1,0 +1,264 @@
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #475569;
+  --bg-dark: #f1f5f9;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-hover: rgba(255, 255, 255, 1);
+  --text-main: #020617;
+  --text-muted: #334155;
+  --success: #16a34a;
+  --glass-border: rgba(0, 0, 0, 0.12);
+  --glow: 0 10px 25px -5px rgba(37, 99, 235, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Luxury Background Effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, rgba(241, 245, 249, 0.8) 0%, rgba(241, 245, 249, 0.4) 100%),
+    url('mobiltabrakan.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+  filter: contrast(1.1);
+}
+
+/* Container with Glassmorphism */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+  animation: slideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+
+/* Header Styling */
+.head h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background: none;
+  -webkit-text-fill-color: initial;
+  margin-bottom: 15px;
+  letter-spacing: -0.02em;
+}
+
+.head p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Premium Grid List */
+.nav-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 40px 0;
+}
+
+.nav-list li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #fff;
+  color: var(--text-main);
+  min-height: 110px;
+  padding: 20px;
+  border-radius: 16px;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.nav-list li a:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-8px);
+  box-shadow: var(--glow);
+  border-color: var(--primary);
+}
+
+/* Feature Details Card */
+.feature-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  margin-top: 30px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.feature-card h2 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+/* Button Navigation */
+.nav {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary);
+  color: white;
+}
+
+.nav a:hover {
+  transform: translateY(-2px);
+  background: var(--text-main);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* WhatsApp Specific */
+.wa-btn {
+  background: var(--success) !important;
+  color: white !important;
+  width: 100%;
+}
+
+.wa-btn:hover {
+  background: #16a34a !important;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4) !important;
+}
+
+/* Animation & Interaction Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Mobile & Tablet Optimizations */
+@media (max-width: 768px) {
+  body {
+    padding: 30px 15px;
+  }
+  
+  .container {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .head h1 {
+    font-size: 2.2rem;
+  }
+  
+  .head p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .nav-list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin: 25px 0;
+  }
+
+  .nav-list li a {
+    min-height: 90px;
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  /* Damage Selection Page Specific Grid */
+  .part-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .head h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-list {
+    grid-template-columns: 1fr 1fr; /* Force 2 columns on very small phones */
+  }
+  
+  .container {
+    padding: 25px 15px;
+  }
+}

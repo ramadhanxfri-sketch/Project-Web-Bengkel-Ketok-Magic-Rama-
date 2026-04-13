@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengkel Ketok Magic Rama - Spesialis Body & Cat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Home Specific Premium Styles */
+        .hero-section {
+            padding: 20px 0 40px 0;
+        }
+        
+        .trust-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            margin: 30px 0;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item svg {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .trust-item strong {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .trust-item span {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .cta-label {
+            display: block;
+            margin: 40px 0 20px 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .cta-label::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .premium-btn {
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 25px !important;
+            margin-bottom: 12px;
+            background: white !important;
+            color: var(--text-main) !important;
+            border: 1px solid var(--glass-border) !important;
+            border-radius: 16px !important;
+            font-weight: 700 !important;
+            text-decoration: none;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02) !important;
+        }
+
+        .premium-btn:hover {
+            transform: translateY(-3px);
+            background: var(--primary) !important;
+            color: white !important;
+            box-shadow: var(--glow) !important;
+            border-color: var(--primary) !important;
+        }
+
+        .premium-btn .icon {
+            font-size: 1.2rem;
+            opacity: 0.5;
+        }
+
+        .premium-btn.highlight {
+            background: var(--text-main) !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <div class="head">
+                <h1 style="font-weight: 800; font-size: 2.2rem; line-height: 1.2;">Bengkel Rama</h1>
+                <p style="margin-top: 10px; color: var(--text-muted); line-height: 1.5;">
+                    Spesialis Perbaikan Body & Cat Mobil Profesional.<br>
+                    Hasil Presisi, Cepat, dan Bergaransi.
+                </p>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-container">
+                <div class="trust-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <strong>Hasil Rapih</strong>
+                    <span>Teknisi Ahli</span>
+                </div>
+                <div class="trust-item" style="border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border);">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <strong>Harga Jujur</strong>
+                    <span>Transparan</span>
+                </div>
+                <div class="trust-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <strong>Kilat</strong>
+                    <span>Tepat Waktu</span>
+                </div>
+            </div>
+
+            <span class="cta-label">Survei Estimasi Harga Perbaikan</span>
+
+            <div class="nav-links" style="margin-top: 10px;">
+                <a href="repaint.html" class="premium-btn">
+                    <span>Cek Harga Repaint</span>
+                    <span class="icon">→</span>
+                </a>
+                <a href="ketokmagic.html" class="premium-btn">
+                    <span>Cek Harga Ketok Magic</span>
+                    <span class="icon">→</span>
+                </a>
+                <a href="ketokmagic.html?service=Ketok%20%2B%20Cat" class="premium-btn highlight">
+                    <span>Paket Ketok + Cat</span>
+                    <span class="icon">★</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
